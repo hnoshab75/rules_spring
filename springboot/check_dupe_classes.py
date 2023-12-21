@@ -72,7 +72,6 @@ def _check_for_duplicate_classes(springbootzip_filepath, ignorelisted_jars, outp
                 if innerjar_zipentry_path.endswith(".class"):
                     if innerjar_zipentry_path.endswith("module-info.class"):
                         continue
-                    print(innerjar_zipentry_path)    
                     class_bytes = innerjar_zip.read(innerjar_zipentry_path)
                     digest = hashlib.md5(class_bytes).hexdigest()
 
@@ -182,8 +181,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 3:
       output_file = sys.argv[3]
 
-    print("SPRING FILE PATH")
     try:
         run(sys.argv[1], ignorelist_file, output_file)
     except:
-        print(sys.argv[1])
+        print(sys.argv[1]
