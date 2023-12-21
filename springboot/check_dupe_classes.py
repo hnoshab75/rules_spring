@@ -183,5 +183,7 @@ if __name__ == "__main__":
       output_file = sys.argv[3]
 
     print("SPRING FILE PATH")
-    print(sys.argv[1])
-    run(sys.argv[1], ignorelist_file, output_file)
+    try:
+        run(sys.argv[1], ignorelist_file, output_file)
+    except:
+        print(sys.argv[1])
