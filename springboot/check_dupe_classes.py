@@ -72,7 +72,10 @@ def _check_for_duplicate_classes(springbootzip_filepath, ignorelisted_jars, outp
                 if innerjar_zipentry_path.endswith(".class"):
                     if innerjar_zipentry_path.endswith("module-info.class"):
                         continue
-                    class_bytes = innerjar_zip.read(innerjar_zipentry_path)
+                    try :
+                        class_bytes = innerjar_zip.read(innerjar_zipentry_path)
+                    except :
+                        print(innerjar_zipentry_path)
                     digest = hashlib.md5(class_bytes).hexdigest()
 
                     # now check if we have seen this class before
