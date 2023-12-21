@@ -186,6 +186,8 @@ if __name__ == "__main__":
     if len(sys.argv) > 3:
       output_file = sys.argv[3]
 
+    print("SPRING")
+    print(os.getcwd())
     try:
         run(sys.argv[1], ignorelist_file, output_file)
     except:
