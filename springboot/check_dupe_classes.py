@@ -75,6 +75,7 @@ def _check_for_duplicate_classes(springbootzip_filepath, ignorelisted_jars, outp
                     try :
                         class_bytes = innerjar_zip.read(innerjar_zipentry_path)
                     except :
+                        print(jar_path)
                         print(innerjar_zipentry_path)
                     digest = hashlib.md5(class_bytes).hexdigest()
 
