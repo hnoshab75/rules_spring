@@ -184,4 +184,4 @@ if __name__ == "__main__":
     try:
         run(sys.argv[1], ignorelist_file, output_file)
     except:
-        print(sys.argv[1]
+        print(sys.argv[1])
